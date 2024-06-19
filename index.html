@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio page</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  
+  <script src="https://kit.fontawesome.com/2f0b348b70.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+
+    html{
+      scroll-behavior: smooth;
+    }
+
+    *{
+      margin: 0;
+      padding: 0;
+    }
+    
+    body{
+      background-color: #1B1A55;
+      font-family: "Poppins", sans-serif;
+      font-weight: 400;
+      font-style: normal;
+      color: white;
+    }
+
+    nav{
+      height: 80px;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      background-color: #070F2B
+    }
+
+    nav ul{
+      display: flex;
+      justify-content: center;
+    }
+
+    nav ul li{
+      list-style: none;
+      margin: 0 23px;
+    
+    }
+
+    nav ul li a{
+      text-decoration: none;
+      color: white;
+    }
+
+    nav ul li a:hover{
+      color: rgb(149, 149, 245);
+    }
+
+    .left{
+      font-size: 1.5rem;
+    }
+
+    .firstSection{
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      margin: 160px 0;
+    }
+
+    .firstSection > div{
+      width: 30%;
+    }
+
+    .leftSection{
+      font-size: 2.5rem;
+    }
+    
+    .rightSection img{
+      width: 100%;
+    }
+    .purple{
+      color: rgb(166, 86, 241);
+    }
+    #element{
+      color: rgb(166, 86, 241);
+    }
+    
+    .container{
+      padding: 30px 0;
+      background-color: #16192a;
+      
+    }
+
+    .row{
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+    }
+   
+    .about-col-1{
+      flex-basis: 25%;
+    }
+
+    .about-col-1 img{
+      width: 100%;
+      border-radius: 15px;      
+    }
+
+    .about-col-2{
+      flex-basis: 60%;
+    }
+    .me{
+      font-size: 60px;
+      font-weight: 600;
+    }
+   
+    .tab-titles{
+      display: flex;
+      margin: 20px 0 40px;
+    }
+
+    .tab-links{
+      margin-right: 50px;
+      font-size: 18px;
+      font-weight: 500;
+      cursor: pointer;
+      position: relative;
+    }
+
+    .tab-links::after{
+      content: '';
+      width: 0%;
+      height: 3px;
+      background: #ff004f;
+      position: absolute;
+      left: 0%;
+      bottom: -8px;
+      transition: 0.5s;
+    }
+
+    .tab-links.active-link::after{
+      width: 50%;
+    }
+
+    .tab-contents ul li{
+      list-style: none;
+      margin: 10px 0;
+    }
+    
+    .tab-contents ul li span{
+      color: #b54769;
+      font-size: 14px;
+    }
+
+    .tab-contents{
+      display: none;
+    }
+
+    .tab-contents.active-tab{
+      display: block;
+    }
+
+    #thirdSection > .container{
+      padding: 30px 0;
+     
+    }
+    
+    .container >h1{
+      display: flex;
+      justify-content: center;
+      padding-right: 50px;
+    }
+    .services-list{
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+      grid-gap: 40px;
+      margin-top: 50px;
+      padding: 0 60px;
+      
+    }
+
+    .services-list div{
+      background: #262626;
+      padding: 40px;
+      font-size: 13px;
+      font-weight: 300;
+      border-radius: 10px;
+      transition: background-color 0.5s, transform 0.3s;
+    }
+
+    .services-list div i{
+      font-size: 50px;
+      margin-bottom: 30px;
+    }
+    
+    .services-list div h2{
+      font-size: 30px;
+      font-weight: 500;
+      margin-bottom: 15px;
+    }
+
+    .services-list div a{
+      text-decoration: none;
+      color: white;
+      font-size: 12px;
+      margin-top: 20px;
+      display: inline-block;
+    }
+
+    .services-list div:hover{
+      background-color: #ff004f;
+      transform: translateY(-10px);
+    }
+
+    #fourthSection > div{
+      padding: 50px 0;
+    }
+
+    .work-list{
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+      grid-gap: 40px;
+      margin-top: 50px;
+    }
+    .work{
+      border-radius: 10px;
+      display: block;
+      position: relative;
+      overflow: hidden;
+      padding: 0 20px;
+      transition: transform 0.5s;
+    }
+   
+
+    .layer{
+      width: 100%;
+      height: 0%;
+      background: linear-gradient(rgb(0,0,0,0.6),#ff004f);
+      border-radius: 10px;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      padding: 0 40px;
+      text-align: center;
+      font-size: 14px;
+      transition: height 0.5s;
+    }
+
+    .layer h3{
+      font-weight: 500;
+      margin-bottom: 20px;
+    }
+
+    .layer a{
+      margin-top: 20px;
+      color: #ff004f;
+      text-decoration: none;
+      font-size: 18px;
+      line-height: 60px;
+      background: white;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      text-align: center;
+    }
+
+    .work:hover img{
+      transform: scale(1.1);
+    }
+
+    .work:hover .layer{
+      height: 100%;
+    }
+
+    .btn{
+      display: block;
+      margin: 50px auto;
+      width: fit-content;
+      border: 1px sold #ff004f;
+      padding: 14px 50px;
+      border-radius: 6px;
+      text-decoration: none;
+      color: white;
+      transition: background-color 0.5s ;
+    }
+
+    .btn:hover{
+      background: #ff004f;
+    }
+
+    .contact-left{
+      flex-basis: 35%;
+    }
+
+    .contact-right{
+      flex-basis: 60%;
+    }
+
+    .contact-left p{
+      margin-top: 30px;
+    }
+
+    .contact-left p i{
+      color: #ff004f;
+      margin-right: 15px;
+      font-size: 25px;
+    }
+    .social-icons{
+      margin-top: 30px;
+    }
+
+    .social-icons a{
+      text-decoration: none;
+      font-size: 30px;
+      margin-right: 15px;
+      color: #ababab;
+      display: inline-block;
+      transition: transform 0.5s;
+    }
+
+    .social-icons a:hover{
+      color: #ff004f;
+      transform: translateY(-5px);
+    }
+
+    .btn.btn2{
+      display: inline-block;
+      background: #ff004f;
+    }
+
+    .contact-right form{
+      width: 100%;
+    }
+
+    form input, form textarea{
+      width: 90%;
+      border: 0;
+      outline: none;
+      background: #282e55;
+      padding: 20px;
+      margin: 15px 0;
+      color: white;
+      font-size: 18px;
+      border-radius: 6px;
+    }
+
+    form .btn2{
+      padding: 14px 60px;
+      font-size: 18px;
+      margin-top: 20px;
+      cursor: pointer;
+    }
+
+    .Copyright{
+      width: 100%;
+      text-align: center;
+      padding: 25px 0;
+      background: #262626;
+    }
+
+    .Copyright i{
+      color: #ff004f;
+    }
+    
+    #msg{
+      color: blueviolet;
+      margin-top: -40px;
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <header id="header">
+    <nav>
+      <div class="left">Rohit's Portfolio</div>
+      <div class="right">
+        <ul>
+          <li><a href="#header">Home</a></li>
+          <li><a href="#secondSection">About</a></li>
+          <li><a href="#thirdSection">Services</a></li>
+          <li><a href="#fourthSection">Project</a></li>
+          <li><a href="#5thSection">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+  <main>
+    <section class="firstSection">
+     <div class="leftSection">
+      Hi, My name is <span class="purple">Rohit</span>
+      <div>and i am a Passionate</div>
+      <span id="element"></span>
+     </div>
+     <div class="rightSection">
+      <img src="./Image/developer.png">
+     </div>
+    </section>
+
+    <section id="secondSection">
+      <div class="container">
+        <div class="row">
+          <div class="about-col-1">
+            <img class="myimg" src="./Image/IMG-2f536274b74d1289e116eda5e0696d93-V.jpg">
+          </div>
+          <div class="about-col-2">
+            <h1 class="me">About Me</h1>
+            <p>My name is Rohit Giri. I am from Nepal, residing in the most tourist destination of the world Pokhara.
+              I am a passionate programmer and a tech enthusiast. I have been working on various projects and contributing my skills to reach
+              the goal of making the world a better place through technology. I am a quick learner and always prioritize time management
+              and efficiency in my work. I am always eager to learn new things and take on new challenges.
+            </p>
+
+            <div class="tab-titles">
+              <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+              <p class="tab-links" onclick="opentab('experience')">Experience</p>
+              <p class="tab-links" onclick="opentab('education')">Education</p>
+            </div>
+
+            <div class="tab-contents active-tab" id="skills">
+              <ul>
+                <li><span>UI/UX</span><br>Designing Web/App Interfaces</li>
+                <li><span>Web Development</span><br>Web app Development</li>
+                <li><span>App Development</span><br>Building Android/iOS apps</li>
+              </ul>
+            </div>
+
+            <div class="tab-contents" id="experience">
+              <ul>
+                <li><span>2021 - Current</span><br>UI/UX Design Training at ET Institute</li>
+                <li><span>2019 - 2021</span><br>Team lead at StartApp LLC</li>
+                <li><span>2017-2019</span><br>Internship at ABC</li>
+              </ul>
+            </div>
+
+            <div class="tab-contents" id="education">
+              <ul>
+                <li><span>2020</span><br>SEE from Step By Step Secondary School</li>
+                <li><span>2022</span><br>+2 from Motherland Secondary School</li>
+                <li><span>2023 - Current</span><br>Bachelor's in Information Technology from Informatics College Pokhara</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="thirdSection">
+      <div class="container">
+        <h1 class="me service-h1">My Services</h1>
+        <div class="services-list">
+          <div>
+            <i class="fa-solid fa-code"></i>
+            <h2>Web Design</h2>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laboriosam ad beatae officiis quidem voluptate incidunt temporibus quia? Velit, voluptatum alias! Nulla reprehenderit repellendus, odit dignissimos possimus sequi aut praesentium laboriosam!</p>
+            <a href="#">Learn more</a>
+          </div>
+
+          <div>
+            <i class="fa-solid fa-crop"></i>
+            <h2>UI/Ux Design</h2>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laboriosam ad beatae officiis quidem voluptate incidunt temporibus quia? Velit, voluptatum alias! Nulla reprehenderit repellendus, odit dignissimos possimus sequi aut praesentium laboriosam!</p>
+            <a href="#">Learn more</a>
+          </div>
+
+          <div>
+            <i class="fa-brands fa-app-store"></i>
+            <h2>App Design</h2>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laboriosam ad beatae officiis quidem voluptate incidunt temporibus quia? Velit, voluptatum alias! Nulla reprehenderit repellendus, odit dignissimos possimus sequi aut praesentium laboriosam!</p>
+            <a href="#">Learn more</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="fourthSection">
+      <div class="container">
+        <h1 class="me service-h1">My Project</h1>
+        <div class="work-list">
+          <div class="work img1">
+            <img src="./Image/iphone.png">
+            <div class="layer">
+              <h3>TinDog</h3>
+              <p>The app connects your dog to the nearby dogs to find his/her significant other</p>
+              <a href="https://rohhit-giri.github.io/Dating-site-for-dogs/"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+            </div>
+           
+          </div>
+
+          <div class="work">
+            <img src="./Image/mondrian.png" height="400" width="500">
+            <div class="layer">
+              <h3>Mondrian</h3>
+              <p>Let's you to see the iconic photo</p>
+              <a href="https://rohhit-giri.github.io/Mondrian-Project--HTML-CSS/"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+            </div>
+          </div>
+
+        </div>
+        <a href="" class="btn">See more</a>
+      </div>
+    </section>
+    <section id="5thSection">
+      <div class="container">
+        <div class="row">
+          <div class="contact-left">
+            <h1 class="me">Contact ME</h1>
+            <p><i class="fa-solid fa-paper-plane"></i>contact@example.com</p>
+            <p><i class="fa-solid fa-phone"></i>0000000000</p>
+            <div class="social-icons">
+              <a href="https://www.facebook.com/profile.php?id=100027908746795"><i class="fa-brands fa-facebook"></i></a>
+              <a href="https://www.instagram.com/rohhitgiri/"><i class="fa-brands fa-instagram"></i></a>
+              <a href="https://www.linkedin.com/in/rohit-giri-08481b290/"><i class="fa-brands fa-linkedin"></i></a>
+            </div>
+            <a href="./Image/My Resume.pdf" download class="btn btn2">Download CV</a>
+          </div>
+          <div class="contact-right">
+            <form name="submit-to-google-sheet">
+              <input type="text" name="Name" placeholder="Your Name" required>
+              <input type="email" name="email" placeholder="Your Email" required>
+              <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+              <button type="submit" class="btn btn2">Submit</button>
+            </form>
+            <span id="msg"></span>
+          </div>
+        </div>
+      </div>
+      <div class="Copyright">
+        <p>Copyright <i class="fa-regular fa-copyright"> Rohit.</i></p>
+      </div>
+    </section>
+    
+  </main>
+
+  <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+  <script>
+    var typed = new Typed('#element', {
+      strings: ['Web Developer', 'Entrepreneur','Freelancer','Gamer'],
+      typeSpeed: 50,
+    });
+  </script>
+
+  <script>
+    
+    var tabLinks = document.getElementsByClassName("tab-links");
+    var tabcontents = document.getElementsByClassName("tab-contents");
+    function opentab(tabname){
+      for(tablink of tabLinks){
+        tablink.classList.remove("active-link");
+      }
+      for(tabcontent of tabcontents){
+        tabcontent.classList.remove("active-tab");
+      }
+      event.currentTarget.classList.add("active-link");
+      document.getElementById(tabname).classList.add("active-tab");
+    }
+
+
+  </script>
+  <script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbycXQ9nGTcVqARh7OfyWJPu1dlAAJxhenZs6zGCqRW6RzR4ukwZCoPznJCsKZFQwj_xlw/exec'
+    const form = document.forms['submit-to-google-sheet']
+    const msg = document.getElementById("msg")
+  
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => {
+          msg.innerHTML = "Message sent successfully"
+          setTimeout(function(){
+            msg.innerHTML = ""
+          },5000)
+          form.reset()
+        })
+        .catch(error => console.error('Error!', error.message))
+    })
+  </script>
+
+</body>
+</html>
